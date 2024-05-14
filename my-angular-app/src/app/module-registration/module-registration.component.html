@@ -1,0 +1,76 @@
+<div class="module-registration-container">
+    <h2>Module Registration</h2>
+
+    <div class="user-info">
+        <h3>Welcome, {{ userId }}</h3>
+      </div>
+  
+    <!-- Button to open the add module form -->
+    <button (click)="toggleAddModuleForm()">Add Module</button>
+  
+    <!-- Modal for adding a new module -->
+    <div *ngIf="showAddModuleForm" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="toggleAddModuleForm()">&times;</span>
+        <h3>Add New Module</h3>
+        <form (ngSubmit)="onAddModule()">
+          <div class="form-group">
+            <label for="newModuleCode">Module Code:</label>
+            <input type="text" id="newModuleCode" [(ngModel)]="newModuleCode" name="newModuleCode" required>
+          </div>
+          <div class="form-group">
+            <label for="newModuleName">Module Name:</label>
+            <input type="text" id="newModuleName" [(ngModel)]="newModuleName" name="newModuleName" required>
+          </div>
+          <div class="form-group">
+            <label for="newModuleCredits">Credits:</label>
+            <input type="number" id="newModuleCredits" [(ngModel)]="newModuleCredits" name="newModuleCredits" required>
+          </div>
+          <button type="submit">Add Module</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Table for displaying available modules -->
+    <h3>Available Modules</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Module Code</th>
+          <th>Module Name</th>
+          <th>Credits</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of modules">
+          <td>{{ module.moduleCode }}</td>
+          <td>{{ module.moduleName }}</td>
+          <td>{{ module.credits }}</td>
+          <td>
+            <button (click)="onRegisterModule(module.moduleCode)">Register</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Table for displaying registered modules -->
+    <h3>Registered Modules</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Module Code</th>
+          <th>Module Name</th>
+          <th>Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of registeredModules">
+          <td>{{ module.moduleCode }}</td>
+          <td>{{ module.moduleName }}</td>
+          <td>{{ module.credits }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

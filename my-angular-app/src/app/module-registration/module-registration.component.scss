@@ -1,0 +1,92 @@
+/* Define a color palette */
+$primary-color: #f0f0f0; /* Light gray for the primary color */
+$secondary-color: #333333; /* Dark gray for the secondary color */
+$accent-color: #007bff; /* Blue for the accent color */
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: $primary-color;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid $secondary-color;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  color: $secondary-color;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: $accent-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: $secondary-color;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+}
+
+.user-info {
+  background-color: $primary-color;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin: 0;
+    color: $secondary-color;
+  }
+}
+
+/* Additional styling for tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid $secondary-color;
+}
+
+th {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+tr:hover {
+  background-color: $primary-color;
+}
